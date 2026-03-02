@@ -1,0 +1,40 @@
+public class Estadisticas {
+
+    private int[] data;
+    private int n;
+
+    // Constructor con 8 variables
+    public Estadisticas() {
+        data = new int[]{4, 7, 1, 9, 3, 6, 2, 8}; // 8 valores
+        n = data.length;
+    }
+
+    public int sum() {
+        int s = 0;
+        for (int i = 0; i < n; i++)
+            s += data[i];
+        return s;
+    }
+
+    public double mean() {
+        if (n == 0) return 0.0;
+        return (double) sum() / (double) n;
+    }
+
+    public int max() {
+        int m = data[0];
+        for (int i = 1; i < n; i++) {
+            if (data[i] > m)
+                m = data[i];
+        }
+        return m;
+    }
+
+    public static void main(String[] args) {
+        Estadisticas e = new Estadisticas();
+
+        System.out.println("Suma: " + e.sum());
+        System.out.println("Promedio: " + e.mean());
+        System.out.println("Máximo: " + e.max());
+    }
+}
